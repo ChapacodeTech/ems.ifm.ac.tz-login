@@ -1,1 +1,169 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS Login</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f4f6f8;
+        }
+
+        .container{
+            width: 100%;
+            max-width: 420px;
+            padding: 20px;
+        }
+
+        .logo{
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .logo h2{
+            margin: 0;
+            color: #1f4e79;
+        }
+
+        .card{
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .card h3{
+            text-align: center;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .card p{
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        label{
+            font-size: 14px;
+            color: #444;
+        }
+
+        input{
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        input:focus{
+            border-color: #1f4e79;
+        }
+
+        .options{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .options a{
+            color: #1f4e79;
+            text-decoration: none;
+        }
+
+        button{
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #1f4e79;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .error{
+            display:none;
+            color:red;
+            text-align:center;
+            margin-top:10px;
+            font-size:14px;
+        }
+
+        .footer{
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="logo">
+        <h2>THE INSTITUTE OF FINANCE MANAGEMENT</h2>
+    </div>
+
+    <div class="card">
+        <h3>Welcome Back!</h3>
+        <p>Login to your account by providing valid credentials</p>
+
+        <label>Email / Username / Reg Number</label>
+        <input type="text" id="username">
+
+        <label>Password</label>
+        <input type="password" id="password">
+
+        <div class="options">
+            <label><input type="checkbox"> Remember me</label>
+            <a href="#">Forgot your password?</a>
+        </div>
+
+        <button onclick="login()">SIGN IN</button>
+
+        <div class="error" id="error">
+            Invalid username or password
+        </div>
+    </div>
+
+    <div class="footer">
+        EMS v1.1.0 © 2026 The Institute of Finance Management – IFM
+    </div>
+
+</div>
+
+<script>
+function login(){
+    const correct = "IMC/BTCTX/2423091";
+    const u = document.getElementById("username").value;
+    const p = document.getElementById("password").value;
+
+    if(u === correct && p === correct){
+        window.location.href = "invoices.html";
+    }else{
+        document.getElementById("error").style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
